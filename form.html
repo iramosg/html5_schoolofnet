@@ -10,39 +10,39 @@
     <header>
         <h1>HTML5 Input Types</h1>
     </header>
-
+    
     <section>
         <form action="">
             <div class="form-group">
                 <label for="color">Color</label>
                 <input type="color">
             </div>
-
+            
             <div class="form-group">
                 <label for="date">Date</label>
                 <input type="date">
             </div>
-
+            
             <div class="form-group">
                 <label for="datetime">DateTime</label>
                 <input type="datetime-local">
             </div>
-
+            
             <div class="form-group">
                 <label for="email">E-mail</label>
                 <input type="email">
             </div>
-
+            
             <div class="form-group">
                 <label for="month">Mês</label>
                 <input type="month">
             </div>
-
+            
             <div class="form-group">
                 <label for="number">Número</label>
                 <input type="number" min="-10" max="10" step="2">
             </div>
-
+            
             <div class="form-group">
                 <label for="range">Range</label>
                 <input type="text" id="inputNumero">
@@ -53,29 +53,112 @@
                     }
                 </script>
             </div>
-
+            
             <div class="form-group">
                 <label for="search">Search</label>
                 <input type="search">
             </div>
-
+            
             <div class="form-group">
                 <label for="time">Time</label>
                 <input type="time">
             </div>
-
+            
             <div class="form-group">
                 <label for="url">URL</label>
                 <input type="url">
             </div>
-
+            
             <div class="form-group">
                 <label for="week">Dia da Semana</label>
                 <input type="week">
             </div>
-
+            
+            <div class="form-group">
+                <label for="datalist">List</label>
+                <input list="codes" name="code" title="Linguagens" x-moz-errormessage="Linguagens" required>
+                <datalist id="codes">
+                    <option value="JavaScript"></option>
+                    <option value="PHP"></option>
+                    <option value="Ruby"></option>
+                    <option value="Java"></option>
+                    <option value="Python"></option>
+                </datalist>
+            </div>
+            
+            
             <button>Submit</button>
         </form>
     </section>
+    
+    <section>
+        <h1>Output</h1>
+        <form oninput="x.value=parseInt(a.value) + parseInt(b.value), y.value=parseInt(a.value)">
+            0
+            <input type="range" id="a" name="a" value="50" min="0" max="100">
+            100
+            +
+            <input type="text" name="b" value="0">
+            =
+            <output name="x"></output>
+            <output name="y"></output>
+        </form>
+    </section>
+    
+    <section>
+        <h1>Autocomplete</h1>
+        <form autocomplete="off">
+            <div class="form-group">
+                <input type="text" name="fname" placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <input type="text" name="lname" placeholder="Sobrenome">
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="E-mail">
+            </div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</section>
+
+<section>
+    <h1>Novalidate e autofocus</h1>
+    <form>
+        <div class="form-group">
+            <input type="text" name="fname" placeholder="Nome" novalidate>
+        </div>
+        <div class="form-group">
+            <input type="text" name="lname" placeholder="Sobrenome" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="E-mail" required autofocus>
+        </div>
+        <button type="submit">Enviar</button>
+        </div>
+    </form>
+</section>
+
+<section>
+    <h1>Form Attribute</h1>
+    <form id="form1" method="get">
+        <div class="form-group">
+            <input type="text" name="fname" placeholder="Nome" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="lname" placeholder="Sobrenome" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="E-mail">
+        </div>
+        <button type="submit">Enviar</button>
+        <button formnovalidate>Enviar Novalidate</button>
+        <button formmethod="post">Enviar Submit Method</button>
+        <button formaction="post.php">Enviar Submit Method</button>
+        </div>
+    </form>
+    <input type="color" name="color" form="form1">
+</section>
+
 </body>
 </html>
